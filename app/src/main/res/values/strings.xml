@@ -4,4 +4,6 @@
     <string name="second_btn">Second page</string>
     <string name="third_btn">Third app</string>
     <string name="uppa_img_desc">UPPA\'s logo</string>
+    <string name="name_hint">Name</string>
+    <string name="sruname_hint">Surname</string>
 </resources>

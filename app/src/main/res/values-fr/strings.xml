@@ -5,4 +5,6 @@
     <string name="second_btn">Deuxième page</string>
     <string name="third_btn">Troisième page</string>
     <string name="uppa_img_desc">Logo de l\'UPPA</string>
+    <string name="name_hint">Nom</string>
+    <string name="sruname_hint">Prénom</string>
 </resources>
