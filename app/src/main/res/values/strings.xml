@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Project 1</string>
+    <string name="title_label">Title</string>
+    <string name="second_btn">Second page</string>
+    <string name="third_btn">Third app</string>
+    <string name="uppa_img_desc">UPPA\'s logo</string>
+</resources>
