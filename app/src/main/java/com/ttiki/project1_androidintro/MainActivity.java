@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Retrieve inputs
-        nameInput = (TextInputLayout)findViewById(R.id.nameInput);
-        surnameInput = (TextInputLayout)findViewById(R.id.surnameInput);
+        nameInput = (TextInputLayout)findViewById(R.id.nameInputText);
+        surnameInput = (TextInputLayout)findViewById(R.id.surnameInputText);
 
         //Retrieve buttons
         btnSec = (Button)findViewById(R.id.second_btn);
