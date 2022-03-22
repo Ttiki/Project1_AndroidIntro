@@ -7,4 +7,5 @@
     <string name="uppa_img_desc">Logo de l\'UPPA</string>
     <string name="name_hint">Nom</string>
     <string name="sruname_hint">Prénom</string>
+    <string name="planet_name">PLANET_NAME</string>
 </resources>
