@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         android:text="@string/title_label"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -56,7 +56,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@id/imageView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameInputText"
@@ -75,7 +75,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameInput">
+        app:layout_constraintTop_toBottomOf="@id/nameInput">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/surnameInputText"

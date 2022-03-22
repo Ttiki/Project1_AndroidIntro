@@ -11,15 +11,16 @@ import android.renderscript.ScriptGroup;
 import android.widget.Button;
 
 import com.google.android.filament.View;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String EXTRAMESSAGE_NAME = "com.ttiki.activiti1.MESSAGE_NAME";
-    public static final String EXTRAMESSAGE_SURNAME = "com.ttiki.activiti1.MESSAGE_SURNAME";
+    public static final String EXTRAMESSAGE_NAME = "com.ttiki.project1_androidintro.MESSAGE_NAME";
+    public static final String EXTRAMESSAGE_SURNAME = "com.ttiki.project1_androidintro.MESSAGE_SURNAME";
     
     Button btnSec, btnThird;
-    TextInputLayout nameInput, surnameInput;
+    TextInputEditText nameInput, surnameInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Retrieve inputs
-        nameInput = (TextInputLayout)findViewById(R.id.nameInputText);
-        surnameInput = (TextInputLayout)findViewById(R.id.surnameInputText);
+        nameInput = (TextInputEditText)findViewById(R.id.nameInputText);
+        surnameInput = (TextInputEditText)findViewById(R.id.surnameInputText);
 
         //Retrieve buttons
         btnSec = (Button)findViewById(R.id.second_btn);
@@ -42,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this,
                         SecondPage.class);
                 //We send the name
-                i.putExtra(EXTRAMESSAGE_NAME, nameInput.getEditText().toString());
+                i.putExtra(EXTRAMESSAGE_NAME, nameInput.getText().toString());
                 //We send the surname
-                i.putExtra(EXTRAMESSAGE_SURNAME, surnameInput.getEditText().toString());
+                i.putExtra(EXTRAMESSAGE_SURNAME, surnameInput.getText().toString());
+
+                System.out.println("Starting activity 2");
                 startActivity(i);
             }
         });

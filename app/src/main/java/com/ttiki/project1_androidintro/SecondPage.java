@@ -13,9 +13,11 @@ public class SecondPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_page);
 
+        System.out.println("Second page started");
+
         //Retrieve intent to retrieve sent information
         Intent i = getIntent();
-        String name = i.getStringExtra("EXTRAMESSAGE_NAME");
+        String name = i.getStringExtra(MainActivity.EXTRAMESSAGE_NAME);
 
         TextView tv = (TextView)findViewById(R.id.nameTest);
         tv.setText(name);
