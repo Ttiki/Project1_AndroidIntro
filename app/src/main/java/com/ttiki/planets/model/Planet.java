@@ -1,20 +1,16 @@
-package com.ttiki.model;
+package com.ttiki.planets.model;
 
 import com.google.gson.annotations.SerializedName;
 
 public class Planet {
-    // Why did we had to make these attr public?
-    // And why do we have to get & set them if we made them public?
-    // This doesn't make any sense!
-    public int id;
     public String nom;
-    public float distance;
+    public int id;
+    public int distance;
     @SerializedName("logo")
     public String imageUrl;
-
-    public Planet(int id, String nom, float distance, String imageUrl) {
-        this.id = id;
+    public Planet(String nom, int id, int distance, String imageUrl) {
         this.nom = nom;
+        this.id = id;
         this.distance = distance;
         this.imageUrl = imageUrl;
     }
@@ -43,7 +39,7 @@ public class Planet {
         this.nom = nom;
     }
 
-    public float getDistance() {
+    public int getDistance() {
         return distance;
     }
 

@@ -1,4 +1,4 @@
-package com.ttiki.viewholders;
+package com.ttiki.planets.viewholders;
 
 import android.util.Log;
 import android.view.View;
@@ -6,9 +6,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.ttiki.adapters.PlanetsAdapter;
-import com.ttiki.model.Planet;
+import com.ttiki.planets.adapters.PlanetsAdapter;
 import com.ttiki.planets.databinding.PlanetItemBinding;
+import com.ttiki.planets.model.Planet;
 
 public class PlanetViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private final PlanetItemBinding ui;

@@ -1,4 +1,4 @@
-package com.ttiki;
+package com.ttiki.planets;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ttiki.planets.R;
 import com.ttiki.planets.databinding.ActivityPage2Binding;
 
 public class Page2 extends AppCompatActivity {
