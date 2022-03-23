@@ -103,8 +103,8 @@
             "planetId": 6,
             "name": "Uranus",
             "description": "Uranus est la septième planète du Système solaire par ordre d'éloignement au Soleil.",
-            "logo": "https://assets.stickpng.com/images/580b585b2edbce24c47b2712.png",
-            "seemore": "https://solarsystem.nasa.gov/system/feature_items/images/29_uranus.png"
+            "logo": "https://solarsystem.nasa.gov/system/feature_items/images/29_uranus.png",
+            "seemore": "https://fr.wikipedia.org/wiki/Uranus_(plan%C3%A8te)"
         },
         {
             "id": 7,
