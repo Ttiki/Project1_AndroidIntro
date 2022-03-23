@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         ui = ActivityMainBinding.inflate(getLayoutInflater());
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://jsonkeeper.com/b/39RU/")
+                .baseUrl("https://jsonkeeper.com/b/LMY5/")
                 .build();
         PlanetsApi service = retrofit.create(PlanetsApi.class);
-        Call<List<Planet>> planetsCall = service.getPlanets("https://jsonkeeper.com/b/39RU/");
+        Call<List<Planet>> planetsCall = service.getPlanets("https://jsonkeeper.com/b/LMY5/");
         planetsCall.enqueue(new Callback<List<Planet>>() {
             @Override
             public void onResponse(Call<List<Planet>> call, Response<List<Planet>> response) {
@@ -42,8 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 ui.planetsRv.setLayoutManager(lm);
                 planets = new ArrayList(response.body());
                 PlanetsAdapter planetsAdapter = new PlanetsAdapter(planets);
+                int i = 0;
+                for (Planet p:
+                     planets) {
+                    p.setId(i);
+                    i++;
+                }
                 planetsAdapter.setOnItemClickListener(postition -> {
-                    Log.d("Log", "Planet " + planets.get(postition).getNom() + " clicked");
+                    Log.d("Log", "Planet " + planets.get(postition).getNom() + " clicked (id="+planets.get(postition).getId()+")");
                 });
                 ui.planetsRv.setAdapter(planetsAdapter);
             }
