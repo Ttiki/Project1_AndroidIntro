@@ -1,6 +1,6 @@
-package com.uppa.monapp.network;
+package com.ttiki.network;
 
-import com.uppa.monapp.model.Planet;
+import com.ttiki.model.Planet;
 
 import java.util.List;
 

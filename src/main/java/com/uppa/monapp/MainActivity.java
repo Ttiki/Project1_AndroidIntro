@@ -7,10 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.uppa.monapp.adapters.PlanetsAdapter;
+import com.ttiki.adapters.PlanetsAdapter;
 import com.uppa.monapp.databinding.ActivityMainBinding;
-import com.uppa.monapp.model.Planet;
-import com.uppa.monapp.network.PlanetsApi;
+import com.ttiki.model.Planet;
+import com.ttiki.network.PlanetsApi;
 
 import java.util.ArrayList;
 import java.util.List;

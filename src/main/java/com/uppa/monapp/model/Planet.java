@@ -1,4 +1,4 @@
-package com.uppa.monapp.model;
+package com.ttiki.model;
 
 import com.google.gson.annotations.SerializedName;
 

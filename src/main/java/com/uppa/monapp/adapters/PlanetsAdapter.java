@@ -1,4 +1,4 @@
-package com.uppa.monapp.adapters;
+package com.ttiki.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.uppa.monapp.databinding.PlanetItemBinding;
-import com.uppa.monapp.model.Planet;
-import com.uppa.monapp.viewholders.PlanetViewHolder;
+import com.ttiki.model.Planet;
+import com.ttiki.viewholders.PlanetViewHolder;
 
 import java.util.ArrayList;
 

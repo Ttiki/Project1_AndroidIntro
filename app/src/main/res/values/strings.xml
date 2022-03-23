@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Project 1</string>
-    <string name="title_label">Title</string>
-    <string name="second_btn">Second page</string>
-    <string name="third_btn">Third app</string>
-    <string name="uppa_img_desc">UPPA\'s logo</string>
-    <string name="name_hint">Name</string>
-    <string name="sruname_hint">Surname</string>
+    <string name="app_name">Mon Uppa</string>
+    <string name="hello">Hello from Uppa</string>
+    <string name="titre">Titre</string>
+    <string name="ok">OK</string>
+    <string name="RAZ">RAZ</string>
+    <string name="Annuler">Annuler</string>
+    <string name="hello_name">Bonjour %s %s</string>
     <string name="planet_name">PLANET_NAME</string>
 </resources>
