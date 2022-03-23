@@ -7,14 +7,14 @@ public class PlanetInfo {
     private String logo;
     private int id;
     private int planetId;
-    private float dist;
+    private float distance;
 
     public float getDist() {
-        return dist;
+        return distance;
     }
 
     public void setDist(float dist) {
-        this.dist = dist;
+        this.distance = dist;
     }
 
     public String getSeemore() {
