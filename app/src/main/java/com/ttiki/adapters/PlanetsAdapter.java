@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.uppa.monapp.databinding.PlanetItemBinding;
 import com.ttiki.model.Planet;
 import com.ttiki.viewholders.PlanetViewHolder;
+import com.uppa.monapp.databinding.PlanetItemBinding;
 
 import java.util.ArrayList;
 

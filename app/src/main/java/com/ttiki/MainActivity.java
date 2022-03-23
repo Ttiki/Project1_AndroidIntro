@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ttiki.adapters.PlanetsAdapter;
-import com.uppa.monapp.databinding.ActivityMainBinding;
 import com.ttiki.model.Planet;
 import com.ttiki.network.PlanetsApi;
+import com.uppa.monapp.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.List;
