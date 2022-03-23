@@ -69,7 +69,9 @@ public class Page3 extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Planet>> call, Throwable t) {
-
+                System.out.println("ERROR RECEIVED!!!!");
+                System.out.println("> Call : " + call);
+                System.out.println("> Throwable : " + t);
             }
         });
     }

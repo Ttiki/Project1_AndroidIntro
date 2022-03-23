@@ -13,6 +13,6 @@ public interface PlanetsApi {
     @GET("planets/")
     Call<List<Planet>> getPlanets();
 
-    @GET("planets/{idplanet}")
+    @GET("planets/{idplanet}/info")
     Call<List<Planet>> getPlanetInfo(@Path("idplanet") int id);
 }
