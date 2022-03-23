@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Mon Uppa</string>
+    <string name="app_name">Planets</string>
     <string name="hello">Hello from Uppa</string>
-    <string name="titre">Titre</string>
+    <string name="titre">Title</string>
     <string name="ok">OK</string>
     <string name="RAZ">RAZ</string>
     <string name="Annuler">Annuler</string>
-    <string name="hello_name">Bonjour %s %s</string>
-    <string name="planetenb">Planten # :</string>
+    <string name="hello_name">Hello %s %s</string>
+    <string name="planetenb">Planten #</string>
     <string name="distSun">Distance to sun :</string>
 </resources>

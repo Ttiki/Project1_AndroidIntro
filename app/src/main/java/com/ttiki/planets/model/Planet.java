@@ -1,11 +1,21 @@
 package com.ttiki.planets.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "planet")
 public class Planet {
+    @ColumnInfo(name = "nom")
     public String nom;
+    @PrimaryKey
+    @ColumnInfo(name = "id")
     public int id;
+    @ColumnInfo(name = "distance")
     public float distance;
+    @ColumnInfo(name = "logo")
     @SerializedName("logo")
     public String imageUrl;
 

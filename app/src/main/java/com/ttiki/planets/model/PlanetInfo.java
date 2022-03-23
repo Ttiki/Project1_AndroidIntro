@@ -1,20 +1,33 @@
 package com.ttiki.planets.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "planet_info")
 public class PlanetInfo {
+    @ColumnInfo(name = "seemore")
     private String seemore;
+    @ColumnInfo(name = "name")
     private String name;
+    @ColumnInfo(name = "description")
     private String description;
+    @ColumnInfo(name = "logo")
     private String logo;
+    @ColumnInfo(name = "distance")
+    private float distance;
+
+    @PrimaryKey
+    @ColumnInfo(name = "id")
     private int id;
     private int planetId;
-    private float dist;
 
-    public float getDist() {
-        return dist;
+    public float getDistance() {
+        return distance;
     }
 
-    public void setDist(float dist) {
-        this.dist = dist;
+    public void setDistance(float distance) {
+        this.distance = distance;
     }
 
     public String getSeemore() {
