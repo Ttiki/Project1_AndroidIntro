@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Projet 1</string>
-    <string name="title_label">Title</string>
-    <string name="second_btn">Deuxième page</string>
-    <string name="third_btn">Troisième page</string>
-    <string name="uppa_img_desc">Logo de l\'UPPA</string>
-    <string name="name_hint">Nom</string>
-    <string name="sruname_hint">Prénom</string>
+    <string name="app_name">Mon Uppa</string>
+    <string name="hello">Bonjour de l\'Uppa</string>
+    <string name="ok">OK</string>
+    <string name="RAZ">RAZ</string>
+    <string name="Annuler">Annuler</string>
+    <string name="planet_name">PLANET_NAME</string>
 </resources>
