@@ -47,5 +47,46 @@
             "distance": 2800,
             "logo": "https://solarsystem.nasa.gov/system/feature_items/images/30_neptune.png"
         }
+    ],
+    "infos": [{
+            "id": 1,
+            "planetId": 1,
+            "name": "vénus",
+            "description": "Vénus est la deuxième planète du Système solaire par ordre d'éloignement au Soleil.",
+            "logo": "https://assets.stickpng.com/images/580b585b2edbce24c47b2712.png",
+            "seemore": "https://fr.wikipedia.org/wiki/V%C3%A9nus_(plan%C3%A8te)"
+        },
+        {
+            "id": 2,
+            "planetId": 2,
+            "name": "mercure",
+            "description": "Mercure est la planète la plus proche du Soleil et la moins massive du Système solaireN 1.",
+            "logo": "https://assets.stickpng.com/images/580b585b2edbce24c47b2709.png",
+            "seemore": "https://fr.wikipedia.org/wiki/Mercure_(plan%C3%A8te)"
+        },
+        {
+            "id": 3,
+            "planetId": 4,
+            "name": "Jupiter",
+            "description": "Jupiter est la cinquième planète du Système solaire par ordre d'éloignement au Soleil.",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Jupiter.png/1200px-Jupiter.png",
+            "seemore": "https://fr.wikipedia.org/wiki/Jupiter_(plan%C3%A8te)"
+        },
+        {
+            "id": 4,
+            "planetId": 5,
+            "name": "Saturne",
+            "description": "Saturne est la sixième planète du Système solaire par ordre d'éloignement au Soleil.",
+            "logo": "https://assets.stickpng.com/images/580b585b2edbce24c47b2712.png",
+            "seemore": "https://fr.wikipedia.org/wiki/Saturne_(plan%C3%A8te)"
+        },
+        {
+            "id": 5,
+            "planetId": 3,
+            "name": "Mars",
+            "description": "Mars est la quatrième planète du Système solaire par ordre croissant de la distance au Soleil",
+            "logo": "https://assets.stickpng.com/images/580b585b2edbce24c47b2712.png",
+            "seemore": "https://fr.wikipedia.org/wiki/Mars_(plan%C3%A8te)"
+        }
     ]
 }

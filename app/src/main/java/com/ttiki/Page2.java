@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.uppa.monapp.R;
-import com.uppa.monapp.databinding.ActivityPage2Binding;
+import com.ttiki.planets.R;
+import com.ttiki.planets.databinding.ActivityPage2Binding;
 
 public class Page2 extends AppCompatActivity {
     ActivityPage2Binding ui;

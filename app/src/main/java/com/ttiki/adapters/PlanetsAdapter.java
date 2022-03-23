@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ttiki.model.Planet;
 import com.ttiki.viewholders.PlanetViewHolder;
-import com.uppa.monapp.databinding.PlanetItemBinding;
+import com.ttiki.planets.databinding.PlanetItemBinding;
 
 import java.util.ArrayList;
 
