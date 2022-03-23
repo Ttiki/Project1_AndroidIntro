@@ -3,6 +3,7 @@
     package="com.ttiki.planets">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MonUppa">
         <activity
-            android:name="com.ttiki.Page3"
+            android:name=".PlanetDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.ttiki.Page2"
+            android:name=".Page3"
             android:exported="false" />
         <activity
-            android:name="com.ttiki.MainActivity"
+            android:name=".Page2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
