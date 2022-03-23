@@ -1,5 +1,6 @@
 package com.ttiki;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -10,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ttiki.adapters.PlanetsAdapter;
 import com.ttiki.model.Planet;
 import com.ttiki.network.PlanetsApi;
-import com.uppa.monapp.databinding.ActivityMainBinding;
+import com.ttiki.planets.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "com.ttiki.planets.EXTRA_MESSAGE";
     ActivityMainBinding ui;
     ArrayList<Planet> planets;
 
@@ -31,26 +33,32 @@ public class MainActivity extends AppCompatActivity {
         ui = ActivityMainBinding.inflate(getLayoutInflater());
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://my-json-server.typicode.com/hamzabm/planetapi/planets/")
+                .baseUrl("https://my-json-server.typicode.com/UPPA-s-University-Projects/3-2022-Mobile2-cours/")
                 .build();
         PlanetsApi service = retrofit.create(PlanetsApi.class);
-        Call<List<Planet>> planetsCall = service.getPlanets("https://my-json-server.typicode.com/hamzabm/planetapi/planets/");
+        Call<List<Planet>> planetsCall = service.getPlanets();
         planetsCall.enqueue(new Callback<List<Planet>>() {
             @Override
             public void onResponse(Call<List<Planet>> call, Response<List<Planet>> response) {
+                System.out.println("Response received from call!");
                 LinearLayoutManager lm = new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false);
                 ui.planetsRv.setLayoutManager(lm);
                 planets = new ArrayList(response.body());
                 PlanetsAdapter planetsAdapter = new PlanetsAdapter(planets);
                 planetsAdapter.setOnItemClickListener(postition -> {
                     Log.d("Log", "Planet " + planets.get(postition).getNom() + " clicked (id="+planets.get(postition).getId()+")");
+                    Intent i = new Intent(MainActivity.this, Page3.class);
+                    i.putExtra("EXRTA_MESSAGE", planets.get(postition).getId());
+                    startActivity(i);
                 });
                 ui.planetsRv.setAdapter(planetsAdapter);
             }
 
             @Override
             public void onFailure(Call<List<Planet>> call, Throwable t) {
-
+                System.out.println("ERROR RECEIVED!!!!");
+                System.out.println("> Call : " + call);
+                System.out.println("> Throwable : " + t);
             }
         });
 

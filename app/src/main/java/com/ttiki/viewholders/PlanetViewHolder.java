@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.ttiki.adapters.PlanetsAdapter;
 import com.ttiki.model.Planet;
-import com.uppa.monapp.databinding.PlanetItemBinding;
+import com.ttiki.planets.databinding.PlanetItemBinding;
 
 public class PlanetViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private final PlanetItemBinding ui;

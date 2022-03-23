@@ -7,4 +7,5 @@
     <string name="Annuler">Annuler</string>
     <string name="hello_name">Bonjour %s %s</string>
     <string name="planet_name">PLANET_NAME</string>
+    <string name="distance">Distance :</string>
 </resources>
