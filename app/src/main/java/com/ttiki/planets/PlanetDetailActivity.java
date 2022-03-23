@@ -43,6 +43,9 @@ public class PlanetDetailActivity extends AppCompatActivity {
                 ui.nom.setText(pl.getName());
                 Glide.with(ui.getRoot()).load(pl.getLogo()).into(ui.logo);
                 ui.description.setText(pl.getDescription());
+                ui.gotoUrl.setText("Plus sur " + pl.getName());
+                ui.distSun.setText(Float.toString(pl.getDist()));
+                ui.planteNb.setText(Integer.toString(pl.getPlanetId()));
                 ui.gotoUrl.setOnClickListener(v -> {
                     String url = pl.getSeemore();
                     Intent i = new Intent(Intent.ACTION_VIEW);
