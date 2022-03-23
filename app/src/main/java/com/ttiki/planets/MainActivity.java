@@ -29,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         ui = ActivityMainBinding.inflate(getLayoutInflater());
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://my-json-server.typicode.com/hamzabm/")
+                .baseUrl("https://my-json-server.typicode.com/UPPA-s-University-Projects/")
                 .build();
         PlanetsApi service = retrofit.create(PlanetsApi.class);
         Call<List<Planet>> planetsCall = service.getPlanets();
@@ -54,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Planet>> call, Throwable t) {
-
+                System.out.println("ERROR!");
+                System.out.println("> Call : " + call);
+                System.out.println("> Throwable : " + t);
             }
         });
 

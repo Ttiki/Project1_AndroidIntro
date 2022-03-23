@@ -32,7 +32,7 @@ public class PlanetDetailActivity extends AppCompatActivity {
         Log.d("HamzaLog", "Id Planet : " + id);
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://my-json-server.typicode.com/hamzabm/")
+                .baseUrl("https://my-json-server.typicode.com/UPPA-s-University-Projects/")
                 .build();
         PlanetsApi service = retrofit.create(PlanetsApi.class);
         Call<List<PlanetInfo>> planetsCall = service.getPlanetInfo(id);
