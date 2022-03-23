@@ -5,10 +5,11 @@ import com.google.gson.annotations.SerializedName;
 public class Planet {
     public String nom;
     public int id;
-    public int distance;
+    public float distance;
     @SerializedName("logo")
     public String imageUrl;
-    public Planet(String nom, int id, int distance, String imageUrl) {
+
+    public Planet(String nom, int id, float distance, String imageUrl) {
         this.nom = nom;
         this.id = id;
         this.distance = distance;
@@ -39,7 +40,7 @@ public class Planet {
         this.nom = nom;
     }
 
-    public int getDistance() {
+    public float getDistance() {
         return distance;
     }
 

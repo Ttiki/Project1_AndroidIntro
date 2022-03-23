@@ -10,9 +10,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface PlanetsApi {
-    @GET("planetapi/planets")
+    @GET("3-2022-Mobile2-cours/planets")
     Call<List<Planet>> getPlanets();
 
-    @GET("planetapi/planets/{idplanet}/infos")
+    @GET("3-2022-Mobile2-cours/planets/{idplanet}/infos")
     Call<List<PlanetInfo>> getPlanetInfo(@Path("idplanet") int id);
 }
