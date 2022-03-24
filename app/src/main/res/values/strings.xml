@@ -1,11 +1,5 @@
 <resources>
-    <string name="app_name">Mon Uppa</string>
-    <string name="hello">Hello from Uppa</string>
-    <string name="titre">Titre</string>
-    <string name="ok">OK</string>
-    <string name="RAZ">RAZ</string>
-    <string name="Annuler">Annuler</string>
-    <string name="hello_name">Bonjour %s %s</string>
-    <string name="planetenb">Planten #</string>
-    <string name="distSun">Distance to sun :</string>
+    <string name="app_name">My Name My Country</string>
+    <string name="textInputET">Please, input your name</string>
+    <string name="seeCountry">See your countries</string>
 </resources>
