@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Activity3_geoloc</string>
+    <string name="app_name">Activity 3 - Geoloc</string>
     <string name="lat" translatable="false">Latitude :</string>
     <string name="lon" translatable="false">Longitude :</string>
     <string name="btnText"><![CDATA[Get longitude & latitude]]></string>
+    <string name="loc">Location :</string>
 </resources>

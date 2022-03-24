@@ -1,55 +1,96 @@
 package com.ttiki.activity3_geoloc;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.ttiki.activity3_geoloc.model.GeoResponse;
+import com.ttiki.activity3_geoloc.network.ILocationAPI;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView lonLab, latLab;
-    Button getLonLabBtn;
-    private FusedLocationProviderClient geoLoc;
+    private TextView tvLat, tvLong, locLab;
+    private Button buttonLocation;
+    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+        ActivityCompat.requestPermissions(this, permissions, 1);
 
-        geoLoc = LocationServices.getFusedLocationProviderClient(this);
+        tvLat = findViewById(R.id.latLab);
+        tvLong = findViewById(R.id.longLab);
+        locLab = findViewById(R.id.locLab);
+        buttonLocation = findViewById(R.id.btnGetLatLong);
 
-        latLab = (TextView) findViewById(R.id.latLab);
-        lonLab = (TextView) findViewById(R.id.longLab);
-        getLonLabBtn = (Button) findViewById(R.id.btnGetLatLong);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//            return;
-//        }
-//        geoLoc.getLastLocation()
-//                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-//                    @Override
-//                    public void onSuccess(Location loc) {
-//                        // De temps en temps la géoloc retournée peut être null.
-//                        // On test ce cas ici
-//                        if (loc != null) {
-//                            latLab.setText("Error!");
-//                            lonLab.setText("Error!");
-//                        }
-//                        latLab.setText(Double.toString((double) loc.getLatitude()));
-//                        lonLab.setText(Double.toString((double) loc.getLongitude()));
-//                    }
-//                });
+        buttonLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    fusedLocationClient.getLastLocation()
+                            .addOnSuccessListener(MainActivity.this, new OnSuccessListener<Location>() {
+                                @Override
+                                public void onSuccess(Location location) {
+
+                                    if (location != null) {
+
+                                        String response = "(" + location.getLatitude() + ";" + location.getLongitude() + ")";
+                                        Log.d("LOCATION", response);
+
+                                        Retrofit retrofit = new Retrofit.Builder()
+                                                .addConverterFactory(GsonConverterFactory.create())
+                                                .baseUrl("https://api-adresse.data.gouv.fr/")
+                                                .build();
+
+                                        ILocationAPI service = retrofit.create(ILocationAPI.class);
+                                        Call<GeoResponse> locationCall = service.getAdresse(location.getLongitude(), location.getLatitude());
+                                        locationCall.enqueue(new Callback<GeoResponse>() {
+                                            @Override
+                                            public void onResponse(Call<GeoResponse> call, Response<GeoResponse> response) {
+                                                Log.d("JSON", response.toString());
+
+                                                tvLat.setText(Double.toString((double)location.getLatitude()));
+                                                tvLong.setText(Double.toString((double)location.getLongitude()));
+                                                locLab.setText(response.body().getFeatures().get(0).getProperties().getLabel());
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<GeoResponse> call, Throwable t) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+                            });
+                    return;
+                }
+
+            }
+        });
 
     }
 }
+
